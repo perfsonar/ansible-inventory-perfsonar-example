@@ -50,10 +50,10 @@ perfsonar_disable_root_ssh: True
 perfsonar_psconfig_remote_remotes: []
 
 # setting the perfsonar_archive-* variables will register testpoints with the archivers
-perfsonar_archive_auth_interfaces: []
-#  - "{{ ansible_all_ipv4_addresses }}"
-perfsonar_archive_hosts: []
-#  - "{{ groups['ps-archives'] }}"
+perfsonar_archive_auth_interfaces:
+  - "{{ ansible_all_ipv4_addresses }}"
+perfsonar_archive_hosts:
+  - "{{ groups['ps-archives'] }}"
 perfsonar_archive_uid: perfsonar
 
 #####
