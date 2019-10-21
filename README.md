@@ -31,14 +31,6 @@ ansible-playbook \
   perfsonar.yml
 ```
 
-5. Provision local changes to perfSONAR infrastructure
-
-```
-ansible-playbook \
-  -i ansible-inventory-perfsonar-example/ \
-  ansible-inventory-perfsonar-example/playbooks/perfsonar.yml
-```
-
 ---
 
 ** Some useful commands to troubleshoot the environment **
@@ -49,5 +41,19 @@ Use Ansible ping to verify connectivity to targets.
 ansible \
   -i ansible-inventory-perfsonar-example/ \
   all -m ping
+```
+
+Display auth interfaces on Archivers:
+```
+ansible ps-archives \
+  -i ansible-inventory-perfsonar-example/ \
+  -a "/usr/sbin/esmond_manage list_user_ip_address"
+```
+
+Delete an auth interface on Archivers:
+```
+ansible ps-archives \
+  -i ansible-inventory-perfsonar-example/ \
+  -a "/usr/sbin/esmond_manage delete_user_ip_address USERNAME IPADDR"
 ```
 
