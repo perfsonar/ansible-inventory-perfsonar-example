@@ -14,6 +14,7 @@ perfsonar_optional_packages:
   - perfsonar-toolkit-servicewatcher
   - perfsonar-toolkit-sysctl
   - perfsonar-toolkit-systemenv-testpoint
+  - pscheduler-tool-nmapreach
 
 # List of NTP servers you want to use on your perfSONAR hosts
 # If empty, any already configured NTP server will not be changed
