@@ -27,7 +27,7 @@ git clone https://github.com/perfsonar/ansible-inventory-perfsonar-example.git
 
 ```
 ansible-playbook \
-  -i ansible-inventory-perfsonar-example/ \
+  -i ansible-inventory-perfsonar-example/inventory/ \
   perfsonar.yml
 ```
 
@@ -39,21 +39,21 @@ Use Ansible ping to verify connectivity to targets.
 
 ```
 ansible \
-  -i ansible-inventory-perfsonar-example/ \
+  -i ansible-inventory-perfsonar-example/inventory/ \
   all -m ping
 ```
 
 Display auth interfaces on Archivers:
 ```
 ansible ps-archives \
-  -i ansible-inventory-perfsonar-example/ \
+  -i ansible-inventory-perfsonar-example/inventory/ \
   -a "/usr/sbin/esmond_manage list_user_ip_address"
 ```
 
 Delete an auth interface on Archivers:
 ```
 ansible ps-archives \
-  -i ansible-inventory-perfsonar-example/ \
+  -i ansible-inventory-perfsonar-example/inventory/ \
   -a "/usr/sbin/esmond_manage delete_user_ip_address USERNAME IPADDR"
 ```
 
