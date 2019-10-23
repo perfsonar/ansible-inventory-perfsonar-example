@@ -57,3 +57,20 @@ ansible ps-archives \
   -a "/usr/sbin/esmond_manage delete_user_ip_address USERNAME IPADDR"
 ```
 
+Deploy meshes
+
+```
+ansible-playbook \
+  -i ansible-inventory-perfsonar-example/ \
+  --limit "ps-psconfig-publishers" \
+  --tags "ps::config" \
+  perfsonar.yml
+```
+
+Show meshes
+```
+ansible ps-testpoints:ps-toolkits:ps-maddash \
+  -i ansible-inventory-perfsonar-example/ \
+  -a "/usr/bin/psconfig remote list"
+```
+
