@@ -34,4 +34,12 @@
 #       + {{ groups['ps-toolkits'] }}
 #       + {{ groups['ps-testpoints'] }}"
 #     remote_configure_archives: True
-perfsonar_psconfig_publish_meshes: []
+perfsonar_psconfig_publish_meshes:
+  - mesh: mesh.json
+    remote_dir: /tmp
+    remote_agents: "{{ groups['ps-maddash'] }}
+      + {{ groups['ps-toolkits'] }}
+      + {{ groups['ps-testpoints'] }}"
+    remote_configure_archives: True
+
+    
