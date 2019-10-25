@@ -61,7 +61,7 @@ Deploy meshes
 
 ```
 ansible-playbook \
-  -i ansible-inventory-perfsonar-example/ \
+  -i ansible-inventory-perfsonar-example/inventory/ \
   --limit "ps-psconfig-publishers" \
   --tags "ps::config" \
   perfsonar.yml
@@ -70,7 +70,7 @@ ansible-playbook \
 Show meshes
 ```
 ansible ps-testpoints:ps-toolkits:ps-maddash \
-  -i ansible-inventory-perfsonar-example/ \
+  -i ansible-inventory-perfsonar-example/inventory/ \
   -a "/usr/bin/psconfig remote list"
 ```
 
